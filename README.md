@@ -1,3 +1,2 @@
 # DS_Crafters-Capstone-
-Word Cloud Generator!!!
-
+Word Cloud Generator
