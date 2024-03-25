@@ -14,37 +14,36 @@ int main()
     cout<<"Enter the total number of initial documents: ";
     cin>>first_Ndocuments;
 
+    string n_documents;
+    unordered_map <string,int>initial_map;
     int count_=0;
     cout<<"Enter the path of file: ";
     cin>>path_;
     for(const auto& entry :file_s::directory_iterator(path_))
     {
         ifstream initialDocuments(entry.path());
-        count_++;
-        if(count_==first_Ndocuments)
+        while(!initialDocuments.eof())
         {
-            break;
+            initialDocuments>>n_documents;
+            for (char &c : n_documents) {
+            c = tolower(c);
+            }
+            if(initial_map.count(n_documents)==0)
+            {
+                initial_map.insert(pair<string,int>(n_documents,1));
+            }
+            else{
+                initial_map[n_documents]++;
+                }
         }
+            count_++;
+            if(count_==first_Ndocuments)
+            {
+                break;
+            }
     }
-    string temp;
-    unordered_map <string,int>m1;
-    for(int i=0;i<10;i++)
-    {
-        getchar();
-        cin>>temp;
-        for (char &c : temp) {
-        c = tolower(c);
-        }
-        if(m1.count(temp)==0)
-        {
-            m1.insert(pair<string,int>(temp,1));
-        }
-        else{
-            m1[temp]++;
-        }
-    }
-    for (auto it = m1.begin(); it != m1.end(); it++) {
-    cout << it->first << ": " << it->second << endl;
-    }
+     for (auto it = initial_map.begin(); it != initial_map.end(); it++) {
+            cout << it->first << ": " << it->second << endl;
+            }
     return 0;
 }
