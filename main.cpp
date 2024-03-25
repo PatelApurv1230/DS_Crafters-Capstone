@@ -18,10 +18,13 @@ int main()
     string n_documents;
     unordered_map <string,int>initial_map;
     int count_=0;
-    cout<<"Enter the path of file: ";
-    cin>>path_;
-    for(const auto& entry :file_s::directory_iterator(path_))
+    
+    while(count_!=first_Ndocuments)
     {
+        cout<<"Enter the path of file: ";
+        cin>>path_;
+        for(const auto& entry :file_s::directory_iterator(path_))
+        {
         ifstream initialDocuments(entry.path());
         while(!initialDocuments.eof())
         {
@@ -47,6 +50,11 @@ int main()
             {
                 break;
             }
+        }
+        if(count_==first_Ndocuments)
+            {
+                break;
+            }       
     }
      for (auto it = initial_map.begin(); it != initial_map.end(); it++) {
             cout << it->first << ": " << it->second << endl;
