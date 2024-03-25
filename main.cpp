@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <cctype>
+#include <algorithm> 
 #include <unordered_map>
 using namespace std;
 namespace file_s=filesystem;
@@ -26,6 +27,11 @@ int main()
         {
             initialDocuments>>n_documents;
             for (char &c : n_documents) {
+            if(c=='.' || c==',' || c=='"')
+            {
+                n_documents.erase(remove(n_documents.begin(),n_documents.end(),c), n_documents.end());
+                continue;
+            }
             c = tolower(c);
             }
             if(initial_map.count(n_documents)==0)
