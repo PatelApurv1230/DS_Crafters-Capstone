@@ -3,7 +3,6 @@
 #include <fstream>
 #include <string>
 #include <cctype>
-
 #include <algorithm> 
 #include <unordered_map>
 #include <map>
@@ -44,6 +43,22 @@ int main()
         }      
         }   
     }
+=======
+    ifstream nc(NCP);//C:\\Users/DELL/Desktop/DSA/Capstone/DS_Crafters-Capstone/notcount.txt"
+    while(nc.good())
+    {
+        nc>>temp;
+        for (char &c : temp) {
+            c = tolower(c);
+        }
+        if(NotCountWord.count(temp)==0)
+        {
+            NotCountWord.insert(pair<string,int>(temp,1));
+        }
+            
+    }
+
+    
     while(count_!=first_Ndocuments)
     {
         cout<<"Enter the path of file: ";
@@ -72,8 +87,11 @@ int main()
             else{
                 initial_map[n_documents]++;
                 }
+
              }
         }
+            }
+
             count_++;
             cout<<count_<<" "<<entry.path()<<" doucument scanned succesfully \n"; 
             if(count_==first_Ndocuments)
@@ -107,21 +125,24 @@ int main()
     
     multimap<int, string> sorted_map;
     for (const auto& pair : initial_map) {
+        if(NotCountWord.count(pair.first)==0)
+
         sorted_map.insert({pair.second, pair.first});
     }
 
     // Print the sorted map
     cout << "Sorted Map by Value:" << endl;
+
     for (const auto& pair : sorted_map) {
         cout << pair.second << ": " << pair.first << endl;
     }
+
     int i=0,k;
     cout<<"Enter k :";
     cin>>k;
     for (auto it = sorted_map.rbegin(); it != sorted_map.rend(); ++it,i++) {
         std::cout << it->first << ": " << it->second << std::endl;
-    
-        if(i==k-1)
+        if(i==k)
         {
             break;
         }
