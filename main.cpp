@@ -22,6 +22,28 @@ int main()
     string NCP;
     cout<<"Enter Not Count file Path :\n";
     cin>>NCP;
+    // ifstream nc(NCP);//C:\\Users/DELL/Desktop/DSA/Capstone/DS_Crafters-Capstone/notcount.txt"
+    for(const auto& entry :file_s::directory_iterator(NCP))
+    {
+        ifstream nc(entry.path());
+        while(!nc.eof())
+        {
+            nc>>temp;
+            for (char &c : temp) {
+            if(c=='.' || c==',' || c=='"')
+            {
+                temp.erase(remove(temp.begin(),temp.end(),c), temp.end());
+                continue;
+            }
+            c = tolower(c);
+            }
+        if(NotCountWord.count(temp)==0)
+        {
+            NotCountWord.insert(pair<string,int>(temp,1));
+        }      
+        }   
+    }
+=======
     ifstream nc(NCP);//C:\\Users/DELL/Desktop/DSA/Capstone/DS_Crafters-Capstone/notcount.txt"
     while(nc.good())
     {
@@ -56,6 +78,8 @@ int main()
             }
             c = tolower(c);
             }
+            if(NotCountWord.count(n_documents)==0)
+             {
             if(initial_map.count(n_documents)==0)
             {
                 initial_map.insert(pair<string,int>(n_documents,1));
@@ -63,7 +87,11 @@ int main()
             else{
                 initial_map[n_documents]++;
                 }
+
+             }
+        }
             }
+
             count_++;
             cout<<count_<<" "<<entry.path()<<" doucument scanned succesfully \n"; 
             if(count_==first_Ndocuments)
@@ -98,20 +126,22 @@ int main()
     multimap<int, string> sorted_map;
     for (const auto& pair : initial_map) {
         if(NotCountWord.count(pair.first)==0)
+
         sorted_map.insert({pair.second, pair.first});
     }
 
     // Print the sorted map
     cout << "Sorted Map by Value:" << endl;
-    // for (const auto& pair : sorted_map) {
-    //     cout << pair.second << ": " << pair.first << endl;
-    // }
+
+    for (const auto& pair : sorted_map) {
+        cout << pair.second << ": " << pair.first << endl;
+    }
+
     int i=0,k;
     cout<<"Enter k :";
     cin>>k;
     for (auto it = sorted_map.rbegin(); it != sorted_map.rend(); ++it,i++) {
         std::cout << it->first << ": " << it->second << std::endl;
-    
         if(i==k)
         {
             break;
