@@ -53,7 +53,7 @@ int main()
 
     case 1:
     {
-        NCP = "C:\\Users\\Dell\\Desktop\\Pre-defined_Words"; // In this locatio there is folder and in folder a txt file for pre-defined words
+        NCP = "C:\\Users\\Dell\\Desktop\\Pre-defined_Words"; // In this location there is folder and in folder a txt file for pre-defined words
         not_count_word(NotCountWord, NCP);
     }
     break;
@@ -87,7 +87,7 @@ int main()
                 cout << "Enter the word:"
                      << "\n";
                 string nc_word;
-                cin>>nc_word;
+                cin >> nc_word;
                 NotCountWord.insert(pair<string, int>(nc_word, 1));
             }
             break;
@@ -103,8 +103,8 @@ int main()
                 cout << "Choose Valid Option !"
                      << "\n";
             }
+            }
         }
-    }
     }
     break;
 
@@ -165,28 +165,111 @@ int main()
             break;
         }
     }
-    multimap<int, string> sorted_map;
-    for (const auto &pair : initial_map)
-    {
-        sorted_map.insert({pair.second, pair.first});
-    }
+    int num_2 = 1;
 
-    std::cout << "Sorted Map by Value:" << endl;
-    for (const auto &pair : sorted_map)
+    while (num_2 != 4)
     {
-        std::cout << pair.second << ": " << pair.first << endl;
-    }
-    int i = 0, k;
-    std::cout << "Enter k :";
-    std::cin >> k;
-    for (auto it = sorted_map.rbegin(); it != sorted_map.rend(); ++it, i++)
-    {
-        std::cout << it->first << ": " << it->second << std::endl;
+        std::cout << "Press 1 to add file for counting frequency:"
+                  << "\n"
+                  << "Press 2 to add a word which will not be counted for frequency:"
+                  << "\n"
+                  << "Press 3 to get top k most frequently used words:"
+                  << "\n"
+                  << "Press 4 to Exit:"
+                  << "\n";
 
-        if (i == k - 1)
+        std::cin >> num_2;
+
+        switch (num_2)
         {
-            break;
+        case 1:
+        {
+            string path_new;
+            string new_documents;
+            std::cout << "Enter the path of file: ";
+            std::cin >> path_new;
+            for (const auto &entry : fs::directory_iterator(path_new))
+            {
+                ifstream new_Documents(entry.path());
+
+                while (!new_Documents.eof())
+                {
+                    new_Documents >> new_documents;
+                    for (char &c : new_documents)
+                    {
+                        if (c == '.' || c == ',' || c == '"')
+                        {
+                            new_documents.erase(remove(new_documents.begin(), new_documents.end(), c), new_documents.end());
+                            continue;
+                        }
+                        c = tolower(c);
+                    }
+                    if (NotCountWord.count(new_documents) == 0)
+                    {
+                        if (initial_map.count(new_documents) == 0)
+                        {
+                            initial_map.insert(pair<string, int>(new_documents, 1));
+                        }
+                        else
+                        {
+                            initial_map[new_documents]++;
+                        }
+                    }
+                }
+            }
+        }
+        break;
+
+        case 2:
+        {
+            string new_nc_word;
+
+            std::cout << "Enter the new word for not counting:"
+                      << "\n";
+            std::cin >> new_nc_word;
+
+            if (initial_map.count(new_nc_word) > 0)
+            {
+                initial_map.erase(new_nc_word);
+            }
+            NotCountWord.insert(pair<string, int>(new_nc_word, 1));
+        }
+        break;
+
+        case 3:
+        {
+            multimap<int, string> sorted_map;
+            for (const auto &pair : initial_map)
+            {
+                sorted_map.insert({pair.second, pair.first});
+            }
+            int i = 0, k;
+            std::cout << "Enter the value of K:";
+            std::cin >> k;
+            for (auto it = sorted_map.rbegin(); it != sorted_map.rend(); ++it, i++)
+            {
+                std::cout << it->first << ": " << it->second << std::endl;
+
+                if (i == k - 1)
+                {
+                    break;
+                }
+            }
+        }
+        break;
+
+        case 4:
+        {
+        }
+        break;
+
+        default:
+        {
+            cout << "Choose Valid Option!"
+                 << "\n";
+        }
         }
     }
+
     return 0;
 }
