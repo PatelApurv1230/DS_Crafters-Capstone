@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6827435B-1C29-43DC-B592-AF0DD936FA00}|Final\\Final.vcxproj|C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\Final\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6827435B-1C29-43DC-B592-AF0DD936FA00}|Final\\Final.vcxproj|solutionrelative:Final\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6827435B-1C29-43DC-B592-AF0DD936FA00}|Final\\Final.vcxproj|C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\Final\\MyForm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6827435B-1C29-43DC-B592-AF0DD936FA00}|Final\\Final.vcxproj|solutionrelative:Final\\MyForm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6827435B-1C29-43DC-B592-AF0DD936FA00}|Final\\Final.vcxproj|C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\Final\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{6827435B-1C29-43DC-B592-AF0DD936FA00}|Final\\Final.vcxproj|solutionrelative:Final\\MyForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyForm.cpp",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\Final\\MyForm.cpp",
+              "RelativeDocumentMoniker": "Final\\MyForm.cpp",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\Final\\MyForm.cpp",
+              "RelativeToolTip": "Final\\MyForm.cpp",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-02T10:34:59.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyForm.h",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\Final\\MyForm.h",
+              "RelativeDocumentMoniker": "Final\\MyForm.h",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\Final\\MyForm.h",
+              "RelativeToolTip": "Final\\MyForm.h",
+              "ViewState": "AQIAACwBAAAAAAAAAAAAADYBAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-02T10:30:24.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyForm.h [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\DSA\\GUI\\FinalGui\\Final\\MyForm.h",
+              "RelativeDocumentMoniker": "Final\\MyForm.h",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\DSA\\GUI\\Final\\Final\\MyForm.h [Design]",
+              "RelativeToolTip": "..\\Final\\Final\\MyForm.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-02T10:30:12.598Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
