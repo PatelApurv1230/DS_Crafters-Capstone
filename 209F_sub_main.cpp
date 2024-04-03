@@ -169,14 +169,10 @@ int main()
 
     while (num_2 != 4)
     {
-        std::cout << "Press 1 to add file for counting frequency:"
-                  << "\n"
-                  << "Press 2 to add a word which will not be counted for frequency:"
-                  << "\n"
-                  << "Press 3 to get top k most frequently used words:"
-                  << "\n"
-                  << "Press 4 to Exit:"
-                  << "\n";
+        std::cout << "Press 1 to add file for counting frequency\n"
+                  << "Press 2 to add a word which will not be counted for frequency\n"
+                  << "Press 3 to get top k most frequently used words\n"
+                  << "Press 4 to Exit\n"
 
         std::cin >> num_2;
 
@@ -186,7 +182,7 @@ int main()
         {
             string path_new;
             string new_documents;
-            std::cout << "Enter the path of file: ";
+            std::cout << "Enter the path of file :- ";
             std::cin >> path_new;
             for (const auto &entry : fs::directory_iterator(path_new))
             {
@@ -224,8 +220,7 @@ int main()
         {
             string new_nc_word;
 
-            std::cout << "Enter the new word for not counting:"
-                      << "\n";
+            std::cout << "Enter the new word for not counting :- \n";
             std::cin >> new_nc_word;
 
             if (initial_map.count(new_nc_word) > 0)
@@ -244,7 +239,7 @@ int main()
                 sorted_map.insert({pair.second, pair.first});
             }
             int i = 0, k;
-            std::cout << "Enter the value of K:";
+            std::cout << "Enter the value of K :- ";
             std::cin >> k;
             for (auto it = sorted_map.rbegin(); it != sorted_map.rend(); ++it, i++)
             {
@@ -265,8 +260,7 @@ int main()
 
         default:
         {
-            cout << "Choose Valid Option!"
-                 << "\n";
+            cout << "Please Choose Valid Option!\n"
         }
         }
     }
