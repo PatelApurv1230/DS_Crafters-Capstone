@@ -40,12 +40,9 @@ int main()
     string NCP;
     unordered_map<string, int> initial_map, NotCountWord;
     int select_;
-    std::cout << "Press 1 to not count frequency of word which is in pre-defined file:"
-              << "\n"
-              << "Press 2 to not count word from particular file:"
-              << "\n"
-              << "Press 3 to not count word from particular word set:"
-              << "\n";
+    std::cout <<" <<----------WELCOME TO WORD CLOUD GENERATOR---------->>"<< "Please! Press 1 to not count frequency of word which is in pre-defined file,\n"
+              << "Press 2 to not count word from particular file and\n"
+              << "Press 3 to not count word from particular word set :- ";
 
     std::cin >> select_;
     switch (select_)
@@ -60,7 +57,7 @@ int main()
 
     case 2:
     {
-        std::cout << "Enter Not Count file Path :\n";
+        std::cout << "<---You selected option 2---> \nPlease! Enter Not Count file Path :- \n";
         std::cin >> NCP;
         not_count_word(NotCountWord, NCP);
     }
@@ -68,15 +65,12 @@ int main()
 
     case 3:
     {
-        std::cout << "Enter the Set of Word:"
-                  << "\n";
+        std::cout << "<---You selected option 3---> \nPlease! Enter the Set of Word :- ";
         int num = 1;
         while (num != 2)
         {
-            std::cout << "Press 1 to add word in set:"
-                      << "\n"
-                      << "Press 2 exit:"
-                      << "\n";
+            std::cout << "Please! Press 1 to add word in set or\n"
+                      << "Press 2 exit :- ";
 
             cin >> num;
             switch (num)
@@ -84,8 +78,7 @@ int main()
 
             case 1:
             {
-                cout << "Enter the word:"
-                     << "\n";
+                cout << "<---You selected option 1--->\nPlease! Enter the word :- ";
                 string nc_word;
                 cin >> nc_word;
                 NotCountWord.insert(pair<string, int>(nc_word, 1));
@@ -100,8 +93,7 @@ int main()
 
             default:
             {
-                cout << "Choose Valid Option !"
-                     << "\n";
+                cout << "'Please Choose Valid Option!' \n";
             }
             }
         }
@@ -110,20 +102,19 @@ int main()
 
     default:
     {
-        cout << "Choose Valid Option!"
-             << "\n";
+        cout << "'Please Choose Valid Option!' \n";
     }
     }
 
     int count_ = 0;
     string path_;
     int first_Ndocuments;
-    std::cout << "Enter the total number of initial documents: ";
+    std::cout << "Please! Enter the total number of initial documents :- ";
     std::cin >> first_Ndocuments;
     string n_documents;
     while (count_ != first_Ndocuments)
     {
-        std::cout << "Enter the path of file: ";
+        std::cout << "Please! Enter the path of file :- ";
         std::cin >> path_;
         for (const auto &entry : fs::directory_iterator(path_))
         {
@@ -169,10 +160,10 @@ int main()
 
     while (num_2 != 4)
     {
-        std::cout << "Press 1 to add file for counting frequency\n"
+        std::cout << "Please! Press 1 to add file for counting frequency,\n"
                   << "Press 2 to add a word which will not be counted for frequency\n"
                   << "Press 3 to get top k most frequently used words\n"
-                  << "Press 4 to Exit\n"
+                  << "Press 4 to Exit : ";
 
         std::cin >> num_2;
 
@@ -182,7 +173,7 @@ int main()
         {
             string path_new;
             string new_documents;
-            std::cout << "Enter the path of file :- ";
+            std::cout << "<---You selected option 1---> \nPlease! Enter the path of file :- ";
             std::cin >> path_new;
             for (const auto &entry : fs::directory_iterator(path_new))
             {
@@ -220,7 +211,7 @@ int main()
         {
             string new_nc_word;
 
-            std::cout << "Enter the new word for not counting :- \n";
+            std::cout << "<---You selected option 2---> \nPlease! Enter the new word for not counting :- ";
             std::cin >> new_nc_word;
 
             if (initial_map.count(new_nc_word) > 0)
@@ -239,7 +230,7 @@ int main()
                 sorted_map.insert({pair.second, pair.first});
             }
             int i = 0, k;
-            std::cout << "Enter the value of K :- ";
+            std::cout << "<---You selected option 3---> \nPlease! Enter the value of K :- ";
             std::cin >> k;
             for (auto it = sorted_map.rbegin(); it != sorted_map.rend(); ++it, i++)
             {
@@ -260,7 +251,7 @@ int main()
 
         default:
         {
-            cout << "Please Choose Valid Option!\n"
+            cout << "'Please Choose Valid Option!' \n";
         }
         }
     }
