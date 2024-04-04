@@ -87,7 +87,7 @@ int main()
 
             case 2:
             {
-                ;
+                 cout << "Thank you for Visiting , Have a Good Day !";
             }
             break;
 
@@ -246,6 +246,7 @@ int main()
 
         case 4:
         {
+             cout << "Thank you for Visiting , Have a Good Day !";
         }
         break;
 
