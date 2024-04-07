@@ -81,7 +81,7 @@ int main()
 
     case 1:
     {
-        NCP = "Pre-defined_Words"; // In this location there is folder and in folder a txt file for pre-defined words
+        NCP = "C:\\Users\\Dell\\Desktop\\Pre-defined_Words"; // In this location there is folder and in folder a txt file for pre-defined words
 
         not_count_word(NotCountWord, NCP);
         std::cout<<"\n";
@@ -320,7 +320,7 @@ int main()
                 
                 ofstream OF("Output.txt");
                 OF<<"------------------------------------------------------------"<< "\n" ;
-                OF<<"|Frequency || Word|"<<"\n";
+                OF<<"|Frequency || Word                                         |"<<"\n";
                 OF<<"------------------------------------------------------------"<< "\n" ;
                 for (auto it = sorted_map.rbegin(); it != sorted_map.rend(); ++it)
                 { 
