@@ -20,6 +20,7 @@
 #include <algorithm>
 #include <unordered_map>
 #include <map>
+#include <iomanip>
 using namespace std;
 namespace fs = filesystem;
 
@@ -68,7 +69,7 @@ int main()
 {
     string NCP;
     unordered_map<string, int> initial_map, NotCountWord;
-    int select_;
+    int select_,choice_save;
     std::cout << GREEN BOLD << " <<----------WELCOME TO WORD CLOUD GENERATOR---------->>" << RESET << "\n" << BLUE << "Press 1 to not count frequency of word which is in pre-defined file," << RESET << "\n"
               << MAGENTA <<"Press 2 to not count word from particular file and" << RESET << "\n"
               << CYAN << "Press 3 to not count word from particular word set :- " << RESET ;
@@ -80,7 +81,7 @@ int main()
 
     case 1:
     {
-        NCP = "Pre-defined_Words";
+        NCP = "Pre-defined_Words"; // In this location there is folder and in folder a txt file for pre-defined words
 
         not_count_word(NotCountWord, NCP);
         std::cout<<"\n";
@@ -300,7 +301,46 @@ int main()
 
         case 4:
         {
-             printf( MAGENTA BOLD "Thank you for Visiting , Have a Good Day !" RESET "\n" );
+
+            cout<< MAGENTA BOLD<< "Do you want to save file to output"<<RESET GREEN<<"\nPress 1 Yes"<<"\nPress 2 No\n"<<RESET;
+
+            cin>>choice_save;
+            
+            while(choice_save!=2)
+            {
+            switch (choice_save)
+            {
+            case 1:
+            {   
+                multimap<int, string> sorted_map;
+                for (const auto &pair : initial_map)
+                {
+                    sorted_map.insert({pair.second, pair.first});
+                }
+                
+                ofstream OF("Output.txt");
+                OF<<"------------------------------------------------------------"<< "\n" ;
+                OF<<"|Frequency || Word|"<<"\n";
+                OF<<"------------------------------------------------------------"<< "\n" ;
+                for (auto it = sorted_map.rbegin(); it != sorted_map.rend(); ++it)
+                { 
+                      OF << std::left << "|" << std::setw(10) << it->first << "|| " << std::setw(45) << it->second << "|\n";
+
+                }
+                OF<<"------------------------------------------------------------"<< "\n" ;
+                OF.close();
+               return 0;
+            }
+                break;
+            case 2:
+                printf( MAGENTA BOLD "Thank you for Visiting , Have a Good Day !" RESET "\n" );
+                break;
+            default:
+                printf( RED BOLD "Please select valid option" RESET "\n" );
+                break;
+            }
+            }
+             
         }
         break;
 
