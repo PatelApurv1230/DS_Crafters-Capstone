@@ -1,3 +1,6 @@
 C:\Users\DELL\Desktop\DSA\GUI\Final\Final\x64\Release\Final.vcxproj.AssemblyReference.cache
 C:\Users\DELL\Desktop\DSA\GUI\Final\Final\x64\Release\Final.MyForm.resources
 C:\Users\DELL\Desktop\DSA\GUI\Final\Final\x64\Release\Final.vcxproj.GenerateResource.cache
+C:\Users\DELL\Desktop\DSA\GUI\FinalGui\Final\x64\Release\Final.vcxproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\DSA\GUI\FinalGui\Final\x64\Release\Final.MyForm.resources
+C:\Users\DELL\Desktop\DSA\GUI\FinalGui\Final\x64\Release\Final.vcxproj.GenerateResource.cache
