@@ -25,3 +25,16 @@ Word Cloud Generator.
 
 ![image](https://github.com/PatelApurv1230/DS_Crafters-Capstone/assets/160603808/a75879cd-5e39-41a3-af70-88fb3a8a7eab)
 
+*Sample Output*
+
+![image](https://github.com/PatelApurv1230/DS_Crafters-Capstone/assets/160603808/c2be7470-86c8-4058-a2d9-ed26833d1c5c)
+
+
+![image](https://github.com/PatelApurv1230/DS_Crafters-Capstone/assets/160603808/732621c8-229f-4a53-9ef4-fde01017d48e)
+
+![image](https://github.com/PatelApurv1230/DS_Crafters-Capstone/assets/160603808/665ff4ea-e604-432f-b76e-dd762afbb3c4)
+
+![image](https://github.com/PatelApurv1230/DS_Crafters-Capstone/assets/160603808/3835ccd8-d57d-4f9d-a985-66eae6dad67d)
+
+![image](https://github.com/PatelApurv1230/DS_Crafters-Capstone/assets/160603808/afe57ec5-4a03-4591-b9f1-5c82456fef1a)
+
