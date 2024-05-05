@@ -2,6 +2,9 @@
 Word Cloud Generator.
 
 Video Link(With Voice):(https://drive.google.com/file/d/1a6iE6WpidpCcBgYiRUpd4xLjTduGIVo3/view?usp=drive_link)
+
+PPT Link:(https://www.canva.com/design/DAGEMLiYrLo/oB-zEaQV3nHKNx_ky4V9Mg/view?utm_content=DAGEMLiYrLo&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+
 |  *Student ID*  |      *Name*     |
 |--------------|----------------|
 |  202301230   |  Apurv Patel   |
